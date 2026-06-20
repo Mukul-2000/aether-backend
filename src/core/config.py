@@ -8,8 +8,9 @@ class Settings(BaseSettings):
     BACKEND_CORS_ORIGINS: List[str] = [
         "http://localhost:5173",
         "[http://127.0.0.1:5173](http://127.0.0.1:5173)",
+        "https://your-vercel-frontend-url.vercel.app"
     ]
-    DATABASE_URL: str = "sqlite:///./aether_agent.db"
+    DATABASE_URL: str
     GEMINI_API_KEY: str = ""
 
     model_config = SettingsConfigDict(
