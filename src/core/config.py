@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     BACKEND_CORS_ORIGINS: List[str] = [
         "http://localhost:5173",
         "[http://127.0.0.1:5173](http://127.0.0.1:5173)",
-        "https://your-vercel-frontend-url.vercel.app"
+        "https://aether-frontend-sand.vercel.app"
     ]
     DATABASE_URL: str
     GEMINI_API_KEY: str = ""
