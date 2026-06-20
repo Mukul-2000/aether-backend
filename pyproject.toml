@@ -1,25 +1,22 @@
-[project]
+[tool.poetry]
 name = "aether-backend"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "mukul-2000",email = "imukulsindhu@gmail.com"}
-]
+authors = ["mukul-2000 <imukulsindhu@gmail.com>"]
 package-mode = false
-requires-python = ">=3.12"
-dependencies = [
-    "fastapi (>=0.137.1,<0.138.0)",
-    "uvicorn (>=0.49.0,<0.50.0)",
-    "pydantic-settings (>=2.14.1,<3.0.0)",
-    "sqlalchemy (>=2.0.51,<3.0.0)",
-    "httpx (>=0.28.1,<0.29.0)",
-    "beautifulsoup4 (>=4.15.0,<5.0.0)",
-    "google-genai (>=2.8.0,<3.0.0)",
-    "alembic (>=1.18.4,<2.0.0)",
-    "psycopg2-binary (>=2.9.12,<3.0.0)"
-]
 
+[tool.poetry.dependencies]
+python = ">=3.12"
+fastapi = ">=0.137.1,<0.138.0"
+uvicorn = ">=0.49.0,<0.50.0"
+pydantic-settings = ">=2.14.1,<3.0.0"
+sqlalchemy = ">=2.0.51,<3.0.0"
+httpx = ">=0.28.1,<0.29.0"
+beautifulsoup4 = ">=4.15.0,<5.0.0"
+google-genai = ">=2.8.0,<3.0.0"
+alembic = ">=1.18.4,<2.0.0"
+psycopg2-binary = ">=2.9.12,<3.0.0"
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
+requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
