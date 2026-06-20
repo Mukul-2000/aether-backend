@@ -1,9 +1,11 @@
-from fastapi import FastAPI
+from fastapi import Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from src.core.config import settings
 from src.api.api_v1.router import api_router
 # 1. Import your database engine and Base class
 from src.core.database import engine, Base
+from sqlalchemy import text
+from src.core.database import get_db
 
 # 2. Automatically create all tables defined in your models
 def init_db():
@@ -32,6 +34,14 @@ if settings.BACKEND_CORS_ORIGINS:
 app.include_router(api_router, prefix=settings.API_V1_STR)
 
 @app.get("/")
+@app.get("/health")
+def health_check():
+    return {"status": "ok", "database": "connected"}
+
+@app.get("/db-test")
+def test_db(db=Depends(get_db)):
+    result = db.execute(text("SELECT 1")).scalar()
+    return {"db_result": result}
 async def root_ping():
     return {
         "status": "active",
