@@ -5,6 +5,7 @@ description = ""
 authors = [
     {name = "mukul-2000",email = "imukulsindhu@gmail.com"}
 ]
+package-mode = false
 requires-python = ">=3.12"
 dependencies = [
     "fastapi (>=0.137.1,<0.138.0)",
