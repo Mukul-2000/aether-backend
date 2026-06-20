@@ -1,0 +1,18 @@
+# --- Python & Poetry ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.env
+
+# --- Alembic / Database ---
+# Ignore the actual local SQLite DB file if you still have one
+*.db
+*.sqlite3
+
+# --- IDE & OS ---
+.vscode/
+.idea/
+.DS_Store
